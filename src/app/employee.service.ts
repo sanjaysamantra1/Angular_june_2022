@@ -16,4 +16,7 @@ export class EmployeeService {
   addEmployee(newEmp: any) {
     return this.httpClient.post('http://localhost:4000/employees', newEmp);
   }
+  updateEmployee(emp: any) {
+    return this.httpClient.patch(`http://localhost:4000/employees/${emp.id}`, emp);
+  }
 }

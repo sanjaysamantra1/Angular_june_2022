@@ -32,6 +32,13 @@ import { CommentsComponent } from './comments/comments.component';
 import { UserlistComponent } from './userlist/userlist.component';
 import { EmployeecrudComponent } from './employeecrud/employeecrud.component';
 import { MyInterceptor } from './my-interceptor';
+import { ObservablesComponent } from './observables/observables.component';
+import { Rxjs1Component } from './rxjs1/rxjs1.component';
+import { Rxjs2Component } from './rxjs2/rxjs2.component';
+import { Rxjs3Component } from './rxjs3/rxjs3.component';
+import { Rxjs4Component } from './rxjs4/rxjs4.component';
+import { TodoAddComponent } from './todo-add/todo-add.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @NgModule({
   // components, pipes, directives
@@ -61,6 +68,13 @@ import { MyInterceptor } from './my-interceptor';
     CommentsComponent,
     UserlistComponent,
     EmployeecrudComponent,
+    ObservablesComponent,
+    Rxjs1Component,
+    Rxjs2Component,
+    Rxjs3Component,
+    Rxjs4Component,
+    TodoAddComponent,
+    TodoListComponent,
   ],
   // modules
   imports: [

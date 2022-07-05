@@ -8,6 +8,8 @@ import { EmployeeService } from '../employee.service';
 })
 export class EmployeecrudComponent implements OnInit {
   allEmployees: any;
+  isEdit: boolean = false;
+  selectedEmployee: any = {};
 
   constructor(private employeeService: EmployeeService) {}
   ngOnInit(): void {}
@@ -33,5 +35,19 @@ export class EmployeecrudComponent implements OnInit {
       alert('Added Successfully');
       this.fetchEmployees();
     });
+  }
+
+  editEmp(emp: any) {
+    this.selectedEmployee = { ...emp };
+    this.isEdit = true;
+  }
+
+  updateEmp() {
+    this.employeeService.updateEmployee(this.selectedEmployee).subscribe(response=>{
+      alert('employee updated successfully');
+      this.selectedEmployee = {};
+      this.isEdit = false;
+      this.fetchEmployees();
+    })
   }
 }

@@ -22,7 +22,9 @@
             <td>{{ emp.last_name }}</td>
             <td>{{ emp.email }}</td>
             <td>
-              <button class="btn btn-primary">Edit</button>&nbsp;
+              <button class="btn btn-primary" (click)="editEmp(emp)">
+                Edit</button
+              >&nbsp;
               <button class="btn btn-danger" (click)="deleteEmp(emp.id)">
                 DELETE
               </button>
@@ -32,18 +34,35 @@
       </table>
     </div>
     <div class="col-sm-4">
-      first Name :
-      <input class="form-control" #fname />
-      last Name :
-      <input class="form-control" #lname />
-      email :
-      <input class="form-control" #email />
-      <button
-        class="btn btn-secondary"
-        (click)="addEmp(fname.value, lname.value, email.value)"
-      >
-        Add Emp
-      </button>
+      <form *ngIf="!isEdit">
+        first Name :
+        <input class="form-control" #fname />
+        last Name :
+        <input class="form-control" #lname />
+        email :
+        <input class="form-control" #email />
+        <button
+          class="btn btn-secondary"
+          (click)="addEmp(fname.value, lname.value, email.value)"
+        >
+          Add Emp
+        </button>
+      </form>
+      <form *ngIf="isEdit">
+        <h3>Edit Form</h3>
+        first Name :
+        <input class="form-control" name="first_name" [(ngModel)]="selectedEmployee.first_name" />
+        last Name :
+        <input class="form-control" name="last_name" [(ngModel)]="selectedEmployee.last_name" />
+        email :
+        <input class="form-control" name="email" [(ngModel)]="selectedEmployee.email" />
+        <button
+          class="btn btn-secondary"
+          (click)="updateEmp()"
+        >
+          UPDATE
+        </button>
+      </form>
     </div>
   </div>
 </div>

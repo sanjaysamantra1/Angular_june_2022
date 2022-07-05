@@ -1,0 +1,6 @@
+{
+  "options": {
+    "browserTarget": "NARESH_APRIL_ANGULAR:build",
+    "proxyConfig": "src/proxy.conf.json"
+  }
+}
