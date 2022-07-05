@@ -5,14 +5,18 @@ export interface Todo {
   id: any;
   value: string;
 }
+const initialTodos = [
+  { id: 1, value: 'Todo 1' },
+  { id: 2, value: 'Todo 2' },
+];
 
 @Injectable({ providedIn: 'root' })
 export class TodoService {
-  private _todo$ = new BehaviorSubject<Todo[]>([]);
+  private _todo$ = new BehaviorSubject<Todo[]>(initialTodos);
   readonly todos$ = this._todo$.asObservable();
 
-  private todos: Todo[] = [];
-  private nextId = 0;
+  private todos: Todo[] = initialTodos;
+  private nextId = 2;
 
   constructor() {}
 
