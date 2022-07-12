@@ -1,0 +1,23 @@
+<h1>template driven Form with validation</h1>
+
+<form name="myForm1" #myForm="ngForm" (submit)="submitMyForm(myForm)">
+    name:
+    <input name="name" #name="ngModel" [(ngModel)]="user.name" required pattern="[a-zA-Z]+" />
+    <span *ngIf="name.hasError('required') && name.dirty" class="text-danger">Name is required</span>
+    <span *ngIf="name.hasError('pattern') && name.dirty" class="text-danger">Only alphabets allowed</span>
+    <br><br>
+    age:
+    <input name="age" #age="ngModel" [(ngModel)]="user.age" required pattern="[0-9]{1,2}" />
+    <span *ngIf="age.hasError('required') && age.dirty" class="text-danger">Age is required</span>
+    <span *ngIf="age.hasError('pattern') && age.dirty" class="text-danger">only numbers between 1-99</span>
+    <br><br>
+
+    <input type="submit" [disabled]="myForm.invalid" />
+
+</form>
+<hr>
+<div> Form Value: {{ myForm.value | json }}</div>
+<div> Form Valid Status: {{ myForm.status | json }} </div>
+
+<div>Name Value: {{name.value}}</div>
+<div>Age Value: {{age.value}}</div>

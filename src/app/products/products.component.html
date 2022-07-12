@@ -42,6 +42,26 @@
           </p>
           <p class="card-text">Price: {{ prod.price }}</p>
           <p class="card-text">Rating: {{ prod.rating }}</p>
+          <p class="card-text">
+            <button
+              class="btn btn-primary"
+              [routerLink]="['/productdetails', prod.id]"
+            >
+              VIEW DETAILS
+            </button>
+            <button
+              class="btn btn-secondary"
+              [routerLink]="['/productdetails']"
+              [queryParams]="{
+                id: prod.id,
+                title: prod.title,
+                price: prod.price
+              }"
+            >
+              View Details-2
+            </button>
+            
+          </p>
         </div>
       </div>
     </div>

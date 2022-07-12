@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -39,6 +40,13 @@ import { Rxjs3Component } from './rxjs3/rxjs3.component';
 import { Rxjs4Component } from './rxjs4/rxjs4.component';
 import { TodoAddComponent } from './todo-add/todo-add.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { Form1Component } from './form1/form1.component';
+import { Form2Component } from './form2/form2.component';
+import { HomeComponent } from './home/home.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   // components, pipes, directives
@@ -75,6 +83,13 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     Rxjs4Component,
     TodoAddComponent,
     TodoListComponent,
+    Form1Component,
+    Form2Component,
+    HomeComponent,
+    AboutusComponent,
+    ContactusComponent,
+    NotfoundComponent,
+    ProductDetailsComponent,
   ],
   // modules
   imports: [
@@ -84,6 +99,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     Ng2SearchPipeModule,
     NgxPaginationModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
   ],
   // export something to other module
   exports: [],

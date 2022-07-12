@@ -98,9 +98,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "naresh_april_angular"
+  "defaultProject": "naresh_april_angular",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
