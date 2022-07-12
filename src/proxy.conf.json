@@ -1,6 +1,0 @@
-{
-  "/api": {
-    "target": "https://dog.ceo/api/breed/retriever/list",
-    "secure": false
-  }
-}
