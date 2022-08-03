@@ -1,0 +1,45 @@
+<p>pipes works!</p>
+<h4>{{ name }}</h4>
+<h4>{{ name | uppercase }}</h4>
+<h4>{{ name | lowercase }}</h4>
+<h4>{{ name | titlecase }}</h4>
+<h4>{{ mySal }}</h4>
+<h4>{{ mySal | currency }}</h4>
+<h4>{{ mySal | currency: "INR" }}</h4>
+<h4>{{ mySal | currency: "&euro;" }}</h4>
+<h4>{{ mySal | currency: "&#x00A5;" }}</h4>
+<!-- input  pipe  pipeName : Arguments -->
+========================================================
+<h4>{{ today }}</h4>
+<h4>{{ today | date }}</h4>
+<h4>{{ today | date: "fullDate" }}</h4>
+<h4>{{ today | date: "mediumDate" }}</h4>
+<h4>{{ today | date: "shortDate" }}</h4>
+<h4>{{ today | date: "fullTime" }}</h4>
+<h4>{{ today | date: "mediumTime" }}</h4>
+<h4>{{ today | date: "shortTime" }}</h4>
+<h4>{{ today | date: "dd-MMMM-yyyy" }}</h4>
+<h4>{{ today | date: "dd-MMM-yyyy" }}</h4>
+<h4>{{ today | date: "dd-MM-yyyy" }}</h4>
+=========================================================
+<h4>{{ 12.111222333 | number: "3.2-5" }}</h4>
+<h4>{{ 12.1 | number: "3.2-5" }}</h4>
+<h4>{{ 0.15 | percent }}</h4>
+=========================================================
+<h4>{{ user }}</h4>
+<h4>{{ user | json }}</h4>
+
+<h4 *ngFor="let entry of user | keyvalue">
+  {{ entry.key }}---{{ entry.value }}
+</h4>
+<h4>{{ cars | slice: 1:4 }}</h4>
+===========================================================<br />
+<textarea cols="30" rows="5" [(ngModel)]="msg" maxlength="100"></textarea>
+<div>Msg: {{ msg }}</div>
+<div>Remaining: {{ msg | remaining: 100:"abc" }}</div>
+<div>Remaining: {{ msg | remaining: 150:"xyz" }}</div>
+===============================================================<br />
+Sorted Array:
+<span *ngFor="let ele of arr | sortAsc">{{ ele }},</span> <br/>
+<input #newNum />
+<button (click)="arr.push(+newNum.value)">push a new ele</button>

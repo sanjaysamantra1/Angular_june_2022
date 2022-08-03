@@ -1,0 +1,53 @@
+<style>
+  button {
+    padding: 1px 20px;
+    border-radius: 10px;
+  }
+</style>
+<p>databinding works!</p>
+
+<div>my name is - {{ name }}</div>
+<div>my name is - <span [innerHTML]="name"></span></div>
+<div>my name is - <span bind-innerHTML="name"></span></div>
+<br />============================================================<br />
+<input value="{{ name }}" /> &nbsp; <input [value]="name" /> &nbsp;
+<input bind-value="name" /> &nbsp; 2-way: <input [(ngModel)]="name" /> &nbsp;
+<br />
+<img src="{{ img_url }}" alt="image not available" />&nbsp;
+<img [src]="img_url" alt="image not available" />&nbsp;
+<img bind-src="img_url" alt="image not available" />&nbsp;
+<br />
+<button class="btn btn-primary" disabled="{{ flag }}">button-1</button> &nbsp;
+<button class="btn btn-primary" [disabled]="flag" (click)="f1()">
+  button-2
+</button>
+&nbsp;
+<button class="btn btn-primary" bind-disabled="flag" on-click="f1()">
+  button-3
+</button>
+<br />============================================================<br />
+Calculator:
+<input type="number" [(ngModel)]="num1" />
+<input type="number" [(ngModel)]="num2" /> <br />
+<p>Addition: {{ num1 + num2 }}</p>
+<p>Subtraction: {{ num1 - num2 }}</p>
+<p>Multiplication: {{ num1 * num2 }}</p>
+<p>Division: {{ num1 / num2 }}</p>
+============================================================
+<h1 [hidden]="flag">Hellooooooooooooooooooooooooooooo</h1>
+<button (click)="toggle()">{{ flag ? "SHOW" : "HIDE" }}</button>
+<br />
+<input type="number" #n1 />
+<input type="number" ref-n2 />
+<button (click)="addition(n1.value, n2.value)">Add</button>
+<br />
+<br />
+<input [type]="myType" style="background-color: aquamarine" /> &nbsp;
+<button (click)="togglePassword()">{{ !flag ? "SHOW" : "HIDE" }}</button><br />
+<br />============================================================<br />
+<h2 [class.even]="isEven" [class.odd]="!isEven">
+  {{ n }} {{ n % 2 == 0 ? "is even" : "is odd" }}
+</h2>
+<h2 [style.color]="n % 2 == 0 ? 'green' : 'red'">
+  {{ n }} {{ n % 2 == 0 ? "is even" : "is odd" }}
+</h2>

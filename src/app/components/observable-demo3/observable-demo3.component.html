@@ -1,0 +1,10 @@
+<p>observable-demo3 works!</p>
+<table class="table table-bordered table-striped" *ngIf="allMessages.length">
+  <tr *ngFor="let msg of allMessages">
+    <td>{{ msg.text }}</td>
+    <td>
+      <button>DELETE</button>
+    </td>
+  </tr>
+</table>
+<div *ngIf="allMessages.length == 0">No Data to display</div>
